@@ -17,7 +17,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'fecha-pedido') ?>
+    <?= $form->field($model, 'fecha_pedido') ?>
 
     <?= $form->field($model, 'importe') ?>
 

@@ -12,24 +12,30 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="oficinas-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <p>
-        <?= Html::a('Create Oficinas', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'direccion',
-            'ciudad',
-            'pais',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+    <div class="panel panel-primary">
+        <div class="panel-heading"><?= Html::encode($this->title) ?></div>
+        <div class="panel-body">
+            <p>
+                <?= Html::a('Create ' . $this->title, ['create'], ['class' => 'btn btn-success']) ?>
+            </p>
+            <?=
+            GridView::widget([
+                'dataProvider' => $dataProvider,
+                'filterModel' => $searchModel,
+                'columns' => [
+                    ['class' => 'yii\grid\SerialColumn'],
+                    'id',
+                    'direccion',
+                    'ciudad',
+                    'pais',
+                    ['class' => 'yii\grid\ActionColumn'],
+                ],
+            ]);
+            ?>
+        </div>
+    </div>
 </div>

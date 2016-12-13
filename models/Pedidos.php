@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "pedidos".
  *
  * @property integer $id
- * @property string $fecha-pedido
+ * @property string $fecha_pedido
  * @property string $importe
  * @property integer $clientes_id
  * @property integer $oficinas_id
@@ -29,7 +29,7 @@ class Pedidos extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['fecha-pedido'], 'safe'],
+            [['fecha_pedido'], 'safe'],
             [['clientes_id', 'oficinas_id'], 'required'],
             [['clientes_id', 'oficinas_id'], 'integer'],
             [['importe'], 'string', 'max' => 45],
@@ -43,19 +43,10 @@ class Pedidos extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'fecha-pedido' => 'Fecha Pedido',
+            'fecha_pedido' => 'Fecha Pedido',
             'importe' => 'Importe',
             'clientes_id' => 'Clientes ID',
             'oficinas_id' => 'Oficinas ID',
         ];
-    }
-
-    /**
-     * @inheritdoc
-     * @return PedidosQuery the active query used by this AR class.
-     */
-    public static function find()
-    {
-        return new PedidosQuery(get_called_class());
     }
 }

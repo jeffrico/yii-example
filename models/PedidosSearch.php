@@ -19,7 +19,7 @@ class PedidosSearch extends Pedidos
     {
         return [
             [['id', 'clientes_id', 'oficinas_id'], 'integer'],
-            [['fecha-pedido', 'importe'], 'safe'],
+            [['fecha_pedido', 'importe'], 'safe'],
         ];
     }
 
@@ -60,7 +60,7 @@ class PedidosSearch extends Pedidos
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'fecha-pedido' => $this->fecha-pedido,
+            'fecha_pedido' => $this->fecha_pedido,
             'clientes_id' => $this->clientes_id,
             'oficinas_id' => $this->oficinas_id,
         ]);
